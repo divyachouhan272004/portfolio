@@ -29,11 +29,9 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      # `enablement: true` turns Pages on for the repo on the first run,
-      # so there is nothing to click in Settings.
+      # Pages is already enabled on the repo with Actions as its source,
+      # so this step only reads the configuration.
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
